@@ -1,0 +1,12 @@
+"deathmatch"
+{
+	"base"		    "base"
+	"title"		    "Deathmatch"
+	"maps"		    "^gm_"
+	"category"	    "other"
+	"menusystem"	"1"
+
+	"settings"
+	{
+	}
+}
