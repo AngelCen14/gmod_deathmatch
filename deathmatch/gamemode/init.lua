@@ -4,8 +4,8 @@ AddCSLuaFile("shared.lua")
 include("shared.lua")
 include("team_manager/sv_team_manager.lua")
 
-local MAX_PLAYERS = 16
-local playersPerTeam = MAX_PLAYERS / 2
+MAX_PLAYERS = 16
+
 local activePlayers = 0
 
 function GM:PlayerConnect(name, ip)
@@ -14,21 +14,12 @@ end
 
 -- Se llama la primera vez que el jugador spawnea
 function GM:PlayerInitialSpawn(ply)
-    -- Si el servidor esta lleno, ponemos al jugador en espectador
     if (activePlayers < MAX_PLAYERS) then
         activePlayers = activePlayers + 1
-        
-        -- Añadir al jugador a un equipo
-        if (countPlayersInTeam(TEAM_1) < playersPerTeam) then
-            print(countPlayersInTeam(TEAM_1))
-            ply:SetTeam(TEAM_1)
-            print(countPlayersInTeam(TEAM_1))
-        else
-            ply:SetTeam(TEAM_2)
-        end
-        
+        autoAssignTeam(ply) -- Añadir al jugador a un equipo
         ply:SetModel()
     else
+        -- Poner al jugador como espectador cuando el server esta lleno
         ply:SetTeam(TEAM_SPECTATOR)
         ply:Spectate(OBS_MODE_ROAMING)
         ply:ChatPrint("Server is full, you are in spectator mode")
