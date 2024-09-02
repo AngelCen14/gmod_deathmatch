@@ -1,3 +1,6 @@
+⚠ THIS GAMEMODES ISN'T FINISHED YET ⚠\
+⚠ ESTE MODO DE JUEGO TODAVIA NO ESTA TERMINADO ⚠
+
 ### English
 # Garry´s Mod Deathmatch
 Deathmatch gamemode for Garry's mod.
