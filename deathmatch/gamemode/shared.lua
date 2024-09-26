@@ -1,5 +1,7 @@
 GM.Name = "Deathmatch"
 
+MAX_PLAYERS = 16
+
 -- Equipos
 TEAM_1 = 1
 TEAM_2 = 2

@@ -4,8 +4,6 @@ AddCSLuaFile("shared.lua")
 include("shared.lua")
 include("team_manager/sv_team_manager.lua")
 
-MAX_PLAYERS = 16
-
 local activePlayers = 0
 
 function GM:PlayerConnect(name, ip)
